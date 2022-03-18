@@ -2,7 +2,9 @@ import Counter from './Counter';
 import Counter2 from './Counter2';
 import Info from './Info';
 import Info2 from './Info2';
-// import Average from './Average';
+import Average from './Average';
+import Average2 from './Average2';
+import Average3 from './Average3';
 import React, { useState } from "react";
 
 function App() {
@@ -26,6 +28,11 @@ function App() {
       <hr/>
       <Info2 />
       <hr/> 
+      <Average />
+      <hr/> 
+      <Average2 />
+      <hr/> 
+      <Average3 />
     </>
   );
 }
