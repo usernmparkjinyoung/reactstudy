@@ -1,5 +1,5 @@
 import React, { useRef, useCallback, useState } from 'react';
-import product from 'immer';
+import product from 'immer';  // 첫번째 파라미터가 함수형태라면 업데이트 함수를 반환 
 
 function App() {
   const nextId = useRef(1);
@@ -20,12 +20,12 @@ function App() {
       })
       */ 
      setForm(
-      product(form, draft => {
+      product(draft => {
         draft[name] = value;
       })
      )
     },
-    [form]
+    []
   );
 
   // form 등록을 위한 함수 
@@ -45,7 +45,7 @@ function App() {
       });
       */ 
      setData(
-       product(data, draft => {
+       product(draft => {
         draft.array.push(info)
        })
      );
@@ -56,7 +56,7 @@ function App() {
       });
       nextId.current += 1;
     },
-    [data, form.name, form.username]
+    [form.name, form.username]
   );
 
   const onRemove = useCallback(
@@ -68,12 +68,12 @@ function App() {
       })
       */ 
      setData(
-      product(data, draft => {
+      product(draft => {
         draft.array.splice(draft.array.findIndex(info => info.id === id), 1);
       })
      )
     },
-    [data]
+    []
   )
 
   return (
