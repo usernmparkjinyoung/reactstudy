@@ -52,4 +52,4 @@ const TodosContainer = () => {
     );
 }
 
-export default TodosContainer;
+export default React.memo(TodosContainer);
