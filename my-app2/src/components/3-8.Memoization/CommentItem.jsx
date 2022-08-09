@@ -24,7 +24,7 @@ function CommentItem({title, content, likes, onClick}) {
     }
 
     const rate = useMemo(() => {
-        console.log("rate check");
+        // console.log("rate check");
         return likes > 10 ? "Good" : "Bad";
     }, [likes])
 
